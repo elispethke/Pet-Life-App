@@ -1,3 +1,3 @@
-import { ReviewScanScreen } from '@/features/vaccine-card';
+import { ReviewScanScreen } from '@/features/vaccines';
 
 export default ReviewScanScreen;

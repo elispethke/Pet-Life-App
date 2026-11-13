@@ -1,8 +1,8 @@
 import { createContext, useCallback, useContext, useMemo, useState } from 'react';
 import type { ReactNode } from 'react';
-import * as vaccinesApi from '@/features/vaccine-card/api';
-import type { VaccineRecord } from '@/features/vaccine-card/types';
-import { upsertRecords } from '@/features/vaccine-card/utils';
+import * as vaccinesApi from '@/features/vaccines/api';
+import type { VaccineRecord } from '@/features/vaccines/types';
+import { upsertRecords } from '@/features/vaccines/utils';
 
 type VaccinesContextValue = {
   records: VaccineRecord[];

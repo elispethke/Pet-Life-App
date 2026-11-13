@@ -1,12 +1,13 @@
 import { useRouter } from 'expo-router';
 import { useRef } from 'react';
 import { Text, View } from 'react-native';
+import { AuthFooterLink } from '@/shared/components/AuthFooterLink';
+import { AuthHeader } from '@/shared/components/AuthHeader';
 import { Button } from '@/shared/components/Button';
 import { Screen } from '@/shared/components/Screen';
 import { TextField } from '@/shared/components/TextField';
 import type { TextFieldRef } from '@/shared/components/TextField';
-import { AuthFooterLink, AuthHeader } from '@/features/auth/components';
-import { TermsCheckbox } from './components';
+import { TermsCheckbox } from './TermsCheckbox';
 import { useSignupForm } from './useSignupForm';
 import { styles } from './SignupScreen.styles';
 

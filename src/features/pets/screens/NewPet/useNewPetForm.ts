@@ -3,8 +3,8 @@ import { usePets } from '@/providers/PetsProvider';
 import type { Species } from '@/features/pets/types';
 import { isValidPetName } from '@/features/pets/utils';
 
-export const PET_NAME_ERROR = 'Digite o nome do pet.';
-export const SAVE_ERROR = 'Não foi possível salvar o pet. Tente novamente.';
+const PET_NAME_ERROR = 'Digite o nome do pet.';
+const SAVE_ERROR = 'Não foi possível salvar o pet. Tente novamente.';
 
 // Estado e lógica da tela Novo pet: espécie, nome, erro, carregamento e o pet salvo.
 export function useNewPetForm() {

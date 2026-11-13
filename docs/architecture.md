@@ -30,30 +30,22 @@ React Native não usa CSS: o "css" de cada componente é um arquivo `.styles.ts`
 ```
 PetLife-App/
 ├─ src/
-│  ├─ app/                    Expo Router: só rotas, arquivos finos que importam a tela da feature
-│  │  ├─ (auth)/              abertura (welcome), login, cadastro (signup)
-│  │  └─ (app)/               após o login: novo pet e abas (início, carteira, escanear, rotina, plano)
+│  ├─ app/                    rotas finas do Expo Router, sem estilo e sem lógica (tabela em docs/navigation.md)
 │  ├─ features/
-│  │  ├─ auth/                abertura, login, cadastro, sessão
-│  │  ├─ pets/                perfil do pet
-│  │  ├─ vaccine-card/        digitalizar, revisar, carteira digital
-│  │  ├─ reminders/           motor de notificações (vacinas e rotina)
-│  │  ├─ routine/             comida e passeio: horários, avisos com ações, histórico
-│  │  ├─ food-scan/           ração: código de barras, foto, análise, porção
-│  │  ├─ sharing/             v1.5: link com validade e QR
-│  │  └─ plan/                plano anual, bloqueio de recursos, Stripe (mock agora)
-│  │     cada feature: screens/<Tela>/ (um pasta por tela), api/ utils/ hooks/ services/ types.ts index.ts
+│  │  ├─ auth/                screens/Welcome, Login, Signup · api/ · utils/ · types.ts · index.ts
+│  │  ├─ pets/                screens/NewPet · api/ · hooks/ · utils/ · types.ts · index.ts
+│  │  ├─ home/                screens/Home
+│  │  ├─ vaccines/            screens/ScanCard, ReviewScan, Wallet, VaccineList · api/ · hooks/ · utils/ · types.ts · index.ts
+│  │  ├─ routine/             screens/Routine, NewRoutineItem · api/ · hooks/ · utils/ · types.ts · index.ts
+│  │  ├─ food-analysis/       screens/FoodAnalysis · api/ · utils/ (calcDailyPortion) · index.ts
+│  │  └─ plan/                screens/Plan, FeatureLocked · hooks/useFeatureGate.ts · index.ts
 │  ├─ shared/
-│  │  ├─ components/          Button, TextField, Screen, Logo, PetIllustration, Chip, Card...
-│  │  ├─ hooks/               useOnline
-│  │  ├─ api/                 clientes HTTP e erros
-│  │  ├─ theme/               colors, typography, spacing, fonts (JÁ EXISTE)
-│  │  ├─ utils/               date, format
-│  │  └─ config/              env, constants
-│  └─ providers/              AuthProvider, PlanProvider, QueryProvider
+│  │  ├─ components/          Button, TextField, Screen, TabBar, Chip, Card... (um por pasta)
+│  │  ├─ theme/               colors, typography, spacing, fonts
+│  │  └─ utils/               date, format
+│  └─ providers/              Auth, Pets, Vaccines, Routine e Plan (um arquivo cada) + AppProviders e index.ts
 ├─ docs/                      contexto do projeto, telas em PNG, diário de aprendizado e prompts
-├─ .maestro/                  fluxos E2E do Maestro (cada fluxo começa com clearState)
-└─ testes unitários           ao lado de cada arquivo (Nome.test.ts ou Nome.test.tsx); veja docs/testing.md
+└─ testes unitários           ao lado de cada arquivo (Nome.test.ts ou Nome.test.tsx)
 ```
 O backend fica em outro projeto, `PetLife/PetLife-API`, criado numa etapa futura.
 

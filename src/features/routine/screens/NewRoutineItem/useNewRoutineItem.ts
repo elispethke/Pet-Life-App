@@ -1,12 +1,12 @@
 import { useRouter } from 'expo-router';
 import { useRef, useState } from 'react';
-import { useMealPortion } from '@/features/food-scan';
+import { useMealPortion } from '@/features/routine/hooks';
 import type { RoutineKind } from '@/features/routine/types';
 import { isValidTime } from '@/features/routine/utils';
 import { useRoutineState } from '@/providers/RoutineProvider';
 
-export const TIME_ERROR = 'Use o horário no formato hh:mm (por exemplo, 07:30).';
-export const AMOUNT_ERROR = 'Digite um número maior que zero.';
+const TIME_ERROR = 'Use o horário no formato hh:mm (por exemplo, 07:30).';
+const AMOUNT_ERROR = 'Digite um número maior que zero.';
 const DEFAULT_WALK_MINUTES = '30';
 
 // Estado do formulário "Novo horário": tipo, horário e gramas (comida) ou duração em minutos (passeio).

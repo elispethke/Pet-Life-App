@@ -1,3 +1,3 @@
-import { FoodAnalysisScreen } from '@/features/food-scan';
+import { FoodAnalysisScreen } from '@/features/food-analysis';
 
 export default FoodAnalysisScreen;

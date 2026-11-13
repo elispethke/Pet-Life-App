@@ -1,6 +1,11 @@
 import { createContext, useCallback, useContext, useMemo, useState } from 'react';
 import type { ReactNode } from 'react';
-import type { PlanState } from '@/features/plan/types';
+
+// Estado do plano. `activeUntil` é a data final (DD/MM/AAAA) e só existe com o plano ativo.
+type PlanState = {
+  active: boolean;
+  activeUntil: string | null;
+};
 
 type PlanContextValue = {
   plan: PlanState;

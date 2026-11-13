@@ -1,3 +1,3 @@
-import { ScanCardScreen } from '@/features/vaccine-card';
+import { ScanCardScreen } from '@/features/vaccines';
 
 export default ScanCardScreen;

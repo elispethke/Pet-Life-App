@@ -1,3 +1,5 @@
+export { AuthFooterLink } from './AuthFooterLink';
+export { AuthHeader } from './AuthHeader';
 export { Avatar } from './Avatar';
 export { BackButton } from './BackButton';
 export { Button } from './Button';
@@ -13,5 +15,7 @@ export { PetIllustration } from './PetIllustration';
 export { Screen } from './Screen';
 export type { ScreenVariant } from './Screen';
 export { SegmentedControl } from './SegmentedControl';
+export { TabBar } from './TabBar';
+export type { TabKey } from './TabBar';
 export { TextField } from './TextField';
 export type { TextFieldRef } from './TextField';

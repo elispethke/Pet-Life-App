@@ -14,7 +14,7 @@ export function fromIsoDate(iso: string): Date {
   return new Date(year, month - 1, day);
 }
 
-export function formatBrDate(date: Date): string {
+function formatBrDate(date: Date): string {
   return `${pad(date.getDate())}/${pad(date.getMonth() + 1)}/${date.getFullYear()}`;
 }
 

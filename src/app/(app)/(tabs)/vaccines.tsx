@@ -1,3 +1,3 @@
-import { VaccinesScreen } from '@/features/vaccine-card';
+import { VaccineListScreen } from '@/features/vaccines';
 
-export default VaccinesScreen;
+export default VaccineListScreen;

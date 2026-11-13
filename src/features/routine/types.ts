@@ -1,5 +1,5 @@
 export type RoutineKind = 'meal' | 'walk';
-export type RoutineStatus = 'pending' | 'done' | 'snoozed';
+type RoutineStatus = 'pending' | 'done' | 'snoozed';
 
 // Item da rotina no estado global (em memória). Horário no formato "HH:MM".
 export type RoutineItem = {

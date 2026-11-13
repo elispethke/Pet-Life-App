@@ -1,3 +1,3 @@
-import { DigitalCardScreen } from '@/features/vaccine-card';
+import { WalletScreen } from '@/features/vaccines';
 
-export default DigitalCardScreen;
+export default WalletScreen;

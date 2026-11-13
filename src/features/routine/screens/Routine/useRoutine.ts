@@ -1,14 +1,14 @@
 import { useRouter } from 'expo-router';
 import { useMemo } from 'react';
-import { useMealPortion } from '@/features/food-scan';
 import { usePetProfile } from '@/features/pets';
 import { useFeatureGate } from '@/features/plan';
+import { useMealPortion } from '@/features/routine/hooks';
 import type { RoutineItem } from '@/features/routine/types';
 import { useRoutineState } from '@/providers/RoutineProvider';
 import type { ChipVariant } from '@/shared/components';
 import { weekdayLabel } from '@/shared/utils';
 
-export type RoutineView = RoutineItem & {
+type RoutineView = RoutineItem & {
   detail: string;
   chipLabel: string;
   chipVariant: ChipVariant;

@@ -1,5 +1,5 @@
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { LOCKED_FEATURE_TEXT, isFeatureKey } from '@/features/plan/utils';
+import { LOCKED_FEATURE_TEXT, isFeatureKey } from './lockedFeatures';
 
 // Texto e ações da folha "Recurso do plano anual". O texto muda conforme o recurso tocado.
 export function useFeatureLocked() {

@@ -1,7 +1,7 @@
 import { Text, View } from 'react-native';
 import { Avatar, Card, Chip, HighlightCard, Icon, Screen } from '@/shared/components';
 import { colors } from '@/shared/theme';
-import { ShortcutCard } from './components';
+import { ShortcutCard } from './ShortcutCard';
 import { styles } from './HomeScreen.styles';
 import { useHome } from './useHome';
 

@@ -3,7 +3,7 @@ import { Button } from '@/shared/components/Button';
 import { Logo } from '@/shared/components/Logo';
 import { Screen } from '@/shared/components/Screen';
 import { TextField } from '@/shared/components/TextField';
-import { SpeciesPicker } from './components';
+import { SpeciesPicker } from './SpeciesPicker';
 import { useNewPetForm } from './useNewPetForm';
 import { styles } from './NewPetScreen.styles';
 
