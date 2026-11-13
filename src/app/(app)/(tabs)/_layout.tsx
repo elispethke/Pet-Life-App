@@ -29,11 +29,6 @@ export default function TabsLayout() {
       <Tabs.Screen name="wallet" />
       <Tabs.Screen name="routine" />
       <Tabs.Screen name="plan" />
-      <Tabs.Screen name="vaccines" options={{ href: null }} />
-      <Tabs.Screen name="scan-card" options={{ href: null }} />
-      <Tabs.Screen name="review-scan" options={{ href: null }} />
-      <Tabs.Screen name="food-analysis" options={{ href: null }} />
-      <Tabs.Screen name="routine-new" options={{ href: null }} />
     </Tabs>
   );
 }

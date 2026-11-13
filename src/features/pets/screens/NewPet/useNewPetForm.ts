@@ -1,3 +1,4 @@
+import { useRouter } from 'expo-router';
 import { useRef, useState } from 'react';
 import { usePets } from '@/providers/PetsProvider';
 import type { Species } from '@/features/pets/types';
@@ -8,6 +9,7 @@ const SAVE_ERROR = 'Não foi possível salvar o pet. Tente novamente.';
 
 // Estado e lógica da tela Novo pet: espécie, nome, erro, carregamento e o pet salvo.
 export function useNewPetForm() {
+  const router = useRouter();
   const { createPet } = usePets();
   const [species, setSpecies] = useState<Species>('dog');
   const [name, setNameValue] = useState('');
@@ -31,8 +33,8 @@ export function useNewPetForm() {
     submitting.current = true;
     setLoading(true);
     try {
-      // Com o pet salvo, as rotas protegidas de (app) levam sozinhas ao Início.
       await createPet({ species, name });
+      router.replace('/home');
     } catch {
       setError(SAVE_ERROR);
     } finally {

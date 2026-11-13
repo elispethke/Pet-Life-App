@@ -3,6 +3,7 @@ import { colors, fontFamily, fontSize, sizes, spacing } from '@/shared/theme';
 
 export const styles = StyleSheet.create({
   header: {
+    marginTop: spacing.md,
     flexDirection: 'row',
     alignItems: 'flex-start',
     justifyContent: 'space-between',

@@ -53,12 +53,13 @@ export function useReviewScan() {
     setSaving(true);
     try {
       await saveRecords(result.records);
-      router.replace('/wallet');
+      // Volta para as abas já na Carteira, onde as vacinas salvas aparecem.
+      router.dismissTo('/wallet');
     } finally {
       submitting.current = false;
       setSaving(false);
     }
   };
 
-  return { items, values, errors, summary, saving, setValue, save };
+  return { items, values, errors, summary, saving, setValue, save, goBack: () => router.back() };
 }

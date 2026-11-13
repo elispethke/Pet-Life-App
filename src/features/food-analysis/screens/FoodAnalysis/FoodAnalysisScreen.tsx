@@ -1,5 +1,5 @@
 import { Text, View } from 'react-native';
-import { Button, Card, Chip, Icon, Screen } from '@/shared/components';
+import { BackButton, Button, Card, Chip, Icon, Screen } from '@/shared/components';
 import { colors } from '@/shared/theme';
 import { NutrientBar } from './NutrientBar';
 import { styles } from './FoodAnalysisScreen.styles';
@@ -7,11 +7,12 @@ import { useFoodAnalysis } from './useFoodAnalysis';
 
 // Análise da ração: produto lido, porção diária e composição (dados simulados).
 export function FoodAnalysisScreen() {
-  const { petName, product, portion, details, stage } = useFoodAnalysis();
+  const { petName, product, portion, details, stage, goBack } = useFoodAnalysis();
 
   return (
-    <Screen scroll withTabBar>
+    <Screen scroll>
       <View style={styles.content}>
+        <BackButton onPress={goBack} />
         <View style={styles.productRow}>
           <View style={styles.productIcon}>
             <Icon name="scan" color={colors.grape} />

@@ -1,3 +1,4 @@
+import { useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { readFoodLabel } from '@/features/food-analysis/api';
 import type { FoodProduct } from '@/features/food-analysis/api';
@@ -8,6 +9,7 @@ import { formatThousands } from '@/shared/utils';
 // Análise da ração: "lê" o produto de exemplo e calcula a porção do pet com a fórmula do produto
 // (peso, idade e castração do pet que está no estado global).
 export function useFoodAnalysis() {
+  const router = useRouter();
   const pet = usePetProfile();
   const [product, setProduct] = useState<FoodProduct | undefined>();
 
@@ -21,8 +23,10 @@ export function useFoodAnalysis() {
     };
   }, []);
 
+  const goBack = () => router.back();
+
   if (!pet || !product) {
-    return { petName: pet?.name ?? '', product, portion: undefined, details: '', stage: '' };
+    return { petName: pet?.name ?? '', product, portion: undefined, details: '', stage: '', goBack };
   }
 
   const portion = calcDailyPortion({
@@ -40,6 +44,7 @@ export function useFoodAnalysis() {
     product,
     portion,
     stage: portion.lifeStage,
+    goBack,
     details: `${portion.meals} refeições · cerca de ${formatThousands(portion.displayKcal)} kcal · ${weight} kg, ${portion.lifeStage}, ${neuteredText}`,
   };
 }

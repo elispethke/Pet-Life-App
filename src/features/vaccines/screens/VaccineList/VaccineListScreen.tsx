@@ -1,5 +1,5 @@
 import { Text, View } from 'react-native';
-import { Card, Chip, Screen, SegmentedControl } from '@/shared/components';
+import { BackButton, Card, Chip, Screen, SegmentedControl } from '@/shared/components';
 import { styles } from './VaccineListScreen.styles';
 import { useVaccineList } from './useVaccineList';
 
@@ -11,11 +11,12 @@ const TABS = [
 
 // Vacinas e lembretes: lista por segmento, com o status de cada item (dados simulados).
 export function VaccineListScreen() {
-  const { petName, tab, setTab, records, remindersOn, toggleReminders } = useVaccineList();
+  const { petName, tab, setTab, records, remindersOn, toggleReminders, goBack } = useVaccineList();
 
   return (
-    <Screen withTabBar scroll>
+    <Screen scroll>
       <View style={styles.content}>
+        <BackButton onPress={goBack} />
         <Text accessibilityRole="header" style={styles.title}>
           Saúde do {petName}
         </Text>

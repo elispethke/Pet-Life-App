@@ -1,5 +1,5 @@
 import { Text, View } from 'react-native';
-import { Button, Card, Chip, Screen, TextField } from '@/shared/components';
+import { BackButton, Button, Card, Chip, Screen, TextField } from '@/shared/components';
 import { fieldIds } from '@/features/vaccines/utils';
 import { styles } from './ReviewScanScreen.styles';
 import { useReviewScan } from './useReviewScan';
@@ -7,7 +7,7 @@ import { useReviewScan } from './useReviewScan';
 // Revisar leitura: etapa OBRIGATÓRIA. Os campos lidos por IA ficam editáveis, os de baixa confiança
 // aparecem destacados e nada é salvo enquanto houver data inválida.
 export function ReviewScanScreen() {
-  const { items, values, errors, summary, saving, setValue, save } = useReviewScan();
+  const { items, values, errors, summary, saving, setValue, save, goBack } = useReviewScan();
 
   const field = (id: string, label: string, flagged = false) => (
     <TextField
@@ -22,8 +22,9 @@ export function ReviewScanScreen() {
   );
 
   return (
-    <Screen keyboardAware withTabBar>
+    <Screen keyboardAware>
       <View style={styles.content}>
+        <BackButton onPress={goBack} />
         <Text accessibilityRole="header" style={styles.title}>
           Confira antes de salvar
         </Text>

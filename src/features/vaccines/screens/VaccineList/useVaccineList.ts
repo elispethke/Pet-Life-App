@@ -1,3 +1,4 @@
+import { useRouter } from 'expo-router';
 import { useState } from 'react';
 import { usePetProfile } from '@/features/pets';
 import { useVaccineViews } from '@/features/vaccines/hooks';
@@ -8,6 +9,7 @@ const KIND_BY_TAB = { vaccines: 'vaccine', dewormer: 'dewormer', visits: 'visit'
 
 // Dados da tela "Saúde do pet": o segmento escolhido e a lista dele (calculada do estado global).
 export function useVaccineList() {
+  const router = useRouter();
   const pet = usePetProfile();
   const views = useVaccineViews();
   const [tab, setTab] = useState<HealthTab>('vaccines');
@@ -23,5 +25,6 @@ export function useVaccineList() {
     records,
     remindersOn,
     toggleReminders: () => setRemindersOn((current) => !current),
+    goBack: () => router.back(),
   };
 }

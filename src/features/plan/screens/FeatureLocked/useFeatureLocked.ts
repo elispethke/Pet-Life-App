@@ -9,7 +9,7 @@ export function useFeatureLocked() {
 
   return {
     text,
-    seePlan: () => router.replace('/plan'),
+    seePlan: () => router.dismissTo('/plan'),
     dismiss: () => router.back(),
   };
 }

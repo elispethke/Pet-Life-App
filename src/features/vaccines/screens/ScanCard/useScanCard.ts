@@ -5,5 +5,5 @@ import { useRouter } from 'expo-router';
 export function useScanCard() {
   const router = useRouter();
   const goToReview = () => router.push('/review-scan');
-  return { capture: goToReview, pickFromGallery: goToReview };
+  return { capture: goToReview, pickFromGallery: goToReview, goBack: () => router.back() };
 }

@@ -21,18 +21,18 @@ function RootNavigator() {
     }
   }, [ready]);
 
-  // O Stack fica sempre montado (o Router precisa dele para achar a rota inicial); a splash cobre a espera.
-  // Rotas protegidas: com sessão só existe o grupo (app); sem sessão (ou ainda carregando) só o grupo (auth).
-  // Quando o status muda, o Router redireciona para o `redirectTo` do grupo bloqueado e apaga o histórico dele:
-  // saiu da conta -> Abertura ("/"); entrou -> "/new-pet" (o grupo (app) manda para o Início se já houver pet).
+  // ÚNICA proteção por login do app: com sessão só existe o grupo (app); sem sessão só o grupo (auth).
+  // Quando o status muda, o Router apaga o histórico do grupo bloqueado e volta para "/" (a rota index),
+  // que decide o destino (src/app/index.tsx).
   return (
     <>
       <StatusBar style="dark" />
       <Stack screenOptions={{ headerShown: false }}>
-        <Stack.Protected guard={status === 'signedIn'} redirectTo="/">
+        <Stack.Screen name="index" />
+        <Stack.Protected guard={status === 'signedIn'}>
           <Stack.Screen name="(app)" />
         </Stack.Protected>
-        <Stack.Protected guard={status !== 'signedIn'} redirectTo="/new-pet">
+        <Stack.Protected guard={status === 'signedOut'}>
           <Stack.Screen name="(auth)" />
         </Stack.Protected>
       </Stack>

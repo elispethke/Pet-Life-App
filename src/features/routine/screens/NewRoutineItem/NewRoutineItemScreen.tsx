@@ -13,7 +13,7 @@ export function NewRoutineItemScreen() {
   const form = useNewRoutineItem();
 
   return (
-    <Screen keyboardAware withTabBar>
+    <Screen keyboardAware>
       <View style={styles.content}>
         <BackButton onPress={form.close} />
         <Text accessibilityRole="header" style={styles.title}>
