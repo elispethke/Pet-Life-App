@@ -2,12 +2,14 @@
   "expo": {
     "name": "PetLife-App",
     "slug": "PetLife-App",
+    "scheme": "petlife",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.elispethke.petlife"
     },
     "android": {
       "adaptiveIcon": {
@@ -16,14 +18,25 @@
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.elispethke.petlife"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "plugins": [
       "expo-font",
-      "expo-splash-screen"
-    ]
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#FFC21A"
+        }
+      ],
+      "expo-router",
+      "expo-status-bar"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
   }
 }

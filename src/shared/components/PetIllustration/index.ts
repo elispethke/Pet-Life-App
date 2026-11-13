@@ -1,0 +1,1 @@
+export { PetIllustration } from './PetIllustration';

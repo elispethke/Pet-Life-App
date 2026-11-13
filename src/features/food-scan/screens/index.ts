@@ -1,0 +1,1 @@
+export { FoodAnalysisScreen } from './FoodAnalysis';

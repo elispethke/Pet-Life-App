@@ -20,6 +20,8 @@ Referência completa, com as 14 telas lado a lado: `../petlife-mvp.html` (na pas
 - **Perfil** não está na barra: abre pelo avatar (inicial do nome da tutora) no topo da tela Início. Decisão: 6 itens deixariam a barra apertada, e o Plano precisa ficar visível.
 - O **Plano** é uma aba. Sem plano ativo, tocar em um recurso (Escanear, Rotina, Análise de ração) abre o aviso "Recurso do plano anual" (tela 14), que leva ao Plano.
 - A tela 12 é uma notificação do sistema, não uma tela do app.
+- **Entrada da Análise da ração (decisão 2026-11-13):** dois atalhos lado a lado no Início, abaixo do cartão do pet: "Escanear carteirinha" (cartão roxo) e "Analisar ração" (cartão lavanda). Os dois são recursos do plano. A nota da Rotina ("Os N g vêm da porção calculada...") também leva à análise.
+- **Degradê do cartão do pet:** usar `expo-linear-gradient` (módulo oficial do Expo, incluso no Expo Go), do amarelo `#FFC21A` ao `#FFD966`, como no PNG.
 
 ## Estados do plano
 - **Sem plano:** chip "Gratuito" no Plano; recursos bloqueados (tela 14).

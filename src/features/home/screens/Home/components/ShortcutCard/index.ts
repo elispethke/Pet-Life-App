@@ -1,0 +1,1 @@
+export { ShortcutCard } from './ShortcutCard';

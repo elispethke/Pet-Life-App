@@ -1,0 +1,1 @@
+export { useVaccineViews } from './useVaccineViews';

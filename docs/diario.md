@@ -33,7 +33,7 @@ Modelo de entrada:
 
 ## Etapa 0.5: produto, telas e arquitetura (documentação)
 
-**O que foi feito:** documentamos o produto, desenhamos 14 telas, definimos a arquitetura por feature, o modelo de dados e a API, e decidimos o caminho de autenticação (Firebase), backend próprio e plano anual de €19.
+**O que foi feito:** documentamos o produto, desenhamos 14 telas, definimos a arquitetura por feature, o modelo de dados e a API, e decidimos a autenticação própria, o backend próprio e o plano anual de €19.
 
 **Por quê:** decidir antes de codar evita retrabalho e serve de material de entrevista e de curso. Escolhemos criar nosso próprio backend e banco para mostrar o sistema completo no portfólio.
 
@@ -43,5 +43,5 @@ Modelo de entrada:
 
 **Perguntas de entrevista:**
 - Por que organizar por feature e não por tipo de arquivo (components, hooks, screens na raiz)?
-- Por que validar o token do Firebase na própria API?
+- Por que a API precisa validar o token em toda requisição, e não confiar no app?
 - O que é IAP e por que não dá para usar só o Stripe numa assinatura dentro do app nas lojas?

@@ -1,0 +1,1 @@
+export { VaccinesScreen } from './VaccinesScreen';
