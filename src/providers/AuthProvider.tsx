@@ -14,7 +14,7 @@ type AuthContextValue = {
 
 const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
-// Guarda quem está logado (sessão em memória). Começa em "loading" até a sessão ser restaurada.
+// Guarda quem está logado. Começa em "loading" até a sessão salva ser restaurada (tokens no armazenamento seguro).
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<AuthUser | null>(null);
   const [status, setStatus] = useState<AuthStatus>('loading');
